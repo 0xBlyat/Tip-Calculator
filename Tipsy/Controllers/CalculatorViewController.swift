@@ -55,18 +55,17 @@ class CalculatorViewController: UIViewController {
         
         let billTotal: Float? = Float(billTextField.text!)
         
+        // Making sure billTotal is not nil so the app doesn't crash
         if (billTotal != nil) {
 
             finalTotal = billTotal! * tipPercent
             finalTotal = finalTotal / Float(splitNumberLabel.text!)!
-            
-            print(String(format: "%.2f", finalTotal))
     
             // Move to ResultsViewController
             self.performSegue(withIdentifier: "goToTotal", sender: self)
             
         } else {
-            // Present an alert if the user does not provide a bill total
+            // Present an alert if the user does not provide a bill total (billTotal is nil)
             let alert = UIAlertController(title: "You entered an empty bill total", message: "Please enter a bill total", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("Retry", comment: "Default action"), style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
