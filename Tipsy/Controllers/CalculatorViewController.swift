@@ -68,7 +68,7 @@ class CalculatorViewController: UIViewController {
         } else {
             // Present an alert if the user does not provide a bill total
             let alert = UIAlertController(title: "You entered an empty bill total", message: "Please enter a bill total", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Okay", comment: "Default action"), style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Retry", comment: "Default action"), style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
         
