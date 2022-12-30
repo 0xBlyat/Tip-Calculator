@@ -18,8 +18,6 @@ class CalculatorViewController: UIViewController {
     var finalTotal: Float = 0.0
     var tipPercent: Float = 1.1
     
- 
-    
     @IBAction func tipChanged(_ sender: UIButton) {
         
         // Hide keyboard
@@ -44,10 +42,9 @@ class CalculatorViewController: UIViewController {
         }
     }
     
-
+    // Update number of people label when stepper value is changed
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         splitNumberLabel.text = Int(sender.value).description
-        
     }
     
     
